@@ -70,13 +70,13 @@
     <h1>Hello world, a inceput cursul de vibecoding! 😊</h1>
 
     <script>
-        const flowers = ['🌸', '🌺', '🌼', '🌻', '🌷', '💐'];
+        const butterflies = ['🦋', '🦋', '🦋'];
         const bees = ['🐝', '🐝'];
 
-        function createElement(emojis, isBee) {
+        function createElement(emojis) {
             const el = document.createElement('div');
             el.classList.add('floating');
-            if (isBee) el.classList.add('bee');
+            el.classList.add('bee');
             el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
             el.style.left = Math.random() * 100 + 'vw';
             el.style.fontSize = (1.5 + Math.random() * 1.5) + 'rem';
@@ -87,17 +87,17 @@
             setTimeout(() => el.remove(), (duration + 5) * 1000);
         }
 
-        function spawnFlower() {
-            createElement(flowers, false);
-            setTimeout(spawnFlower, 600 + Math.random() * 800);
+        function spawnButterfly() {
+            createElement(butterflies);
+            setTimeout(spawnButterfly, 800 + Math.random() * 1000);
         }
 
         function spawnBee() {
-            createElement(bees, true);
+            createElement(bees);
             setTimeout(spawnBee, 1500 + Math.random() * 2000);
         }
 
-        spawnFlower();
+        spawnButterfly();
         spawnBee();
     </script>
 </body>
